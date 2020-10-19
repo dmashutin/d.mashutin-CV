@@ -3,6 +3,26 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+.. image:: _static/face.jpg
+	:align: left
+	:scale: 7%
+
+**************
+Denis Mashutin
+**************
+
+**Technical Writer**
+
+**+7 910 615 25 75**
+
+CV's
+====
+
+.. toctree::
+   :maxdepth: 1
+
+   CV in Russian <CV>
+
 Samples of Articles
 ===================
 
@@ -10,13 +30,9 @@ Samples of Articles
    :maxdepth: 1
 
    Encoding
+   winapi
    
 
 
 
-Indices and Tables
-==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
