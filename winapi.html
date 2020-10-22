@@ -27,6 +27,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="CV and Samples  documentation" href="index.html"/>
+        <link rel="next" title="How to Interact with Windows API Functions in PowerShell" href="winapi_en.html"/>
         <link rel="prev" title="Encoding Unicode: UTF-8 vs. UTF-16" href="Encoding.html"/>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -66,6 +67,12 @@
 <li class="toctree-l2"><a class="reference internal" href="CV.html#id4">Образование</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="CV_en.html">CV in English</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CV_en.html#skills-and-attributes">Skills and Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CV_en.html#previous-positions-and-tasks">Previous Positions and Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CV_en.html#education">Education</a></li>
+</ul>
+</li>
 </ul>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="Encoding.html">Encoding Unicode: UTF-8 vs. UTF-16</a><ul>
@@ -82,6 +89,13 @@
 <li class="toctree-l2"><a class="reference internal" href="#id6">Выбор способа</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="winapi_en.html">How to Interact with Windows API Functions in PowerShell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="winapi_en.html#add-type-cmdlet">Add-Type cmdlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="winapi_en.html#extraction-of-private-net-methods">Extraction of private .NET methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="winapi_en.html#reflection">Reflection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="winapi_en.html#how-to-choose">How to choose</a></li>
+</ul>
+</li>
 </ul>
 
           
@@ -94,7 +108,7 @@
 
       <nav class="wy-nav-top" id="barra-mobile" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="#"></a>
+        <a href="#">Porão do Juca</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -134,7 +148,7 @@
 <div class="section" id="add-type">
 <h2>Использование командлета Add-Type<a class="headerlink" href="#add-type" title="Permalink to this headline">¶</a></h2>
 <p>Командлет <strong>Add-Type</strong> позволяет скомпилировать код требуемой функции Windows API на языке C# и использовать статический метод .NET в текущем сеансе PowerShell.</p>
-<p>Для того чтобы применить командлет <strong>Add-Type</strong>, необходимы сведения о типах данных и параметрах нужной функции Windows API. Эти данные доступны в документации Microsoft. Например, для функции <a class="reference external" href="http://https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-showwindowasync">ShowWindowAsync</a> приводится следующий синтаксис:</p>
+<p>Для того чтобы применить командлет <strong>Add-Type</strong>, необходимы сведения о типах данных и параметрах нужной функции Windows API. Эти данные доступны в документации Microsoft. Например, для функции <a class="reference external" href="https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-showwindowasync">ShowWindowAsync</a> приводится следующий синтаксис:</p>
 <div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">BOOL</span> <span class="nf">ShowWindowAsync</span><span class="p">(</span>
   <span class="n">HWND</span> <span class="n">hWnd</span><span class="p">,</span>
   <span class="kt">int</span>  <span class="n">nCmdShow</span>
@@ -237,6 +251,8 @@
             <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="winapi_en.html" class="btn btn-neutral float-right" title="How to Interact with Windows API Functions in PowerShell">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="Encoding.html" class="btn btn-neutral" title="Encoding Unicode: UTF-8 vs. UTF-16"><span class="fa fa-arrow-circle-left"></span> Previous</a>

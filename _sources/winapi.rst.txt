@@ -14,7 +14,7 @@ Windows PowerShell это объектно-ориентированная ком
 =================================
 Командлет **Add-Type** позволяет скомпилировать код требуемой функции Windows API на языке C# и использовать статический метод .NET в текущем сеансе PowerShell.
 
-Для того чтобы применить командлет **Add-Type**, необходимы сведения о типах данных и параметрах нужной функции Windows API. Эти данные доступны в документации Microsoft. Например, для функции `ShowWindowAsync <http://https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-showwindowasync>`_ приводится следующий синтаксис:
+Для того чтобы применить командлет **Add-Type**, необходимы сведения о типах данных и параметрах нужной функции Windows API. Эти данные доступны в документации Microsoft. Например, для функции `ShowWindowAsync <https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-showwindowasync>`_ приводится следующий синтаксис:
 
 .. code-block:: C++
 

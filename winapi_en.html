@@ -1,0 +1,315 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="" lang="" version="-//W3C//DTD XHTML 1.1//EN" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+  <title>How to Interact with Windows API Functions in PowerShell &mdash; CV and Samples  documentation</title>
+  
+
+  
+
+  
+
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'/>
+    <link rel="stylesheet" href="_static/css/pdj.css" type="text/css" />
+
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="CV and Samples  documentation" href="index.html"/>
+        <link rel="prev" title="Взаимодействие с функциями Windows API в PowerShell" href="winapi.html"/>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="public" />
+    <meta name="robots" content="follow, all" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add jQuery library -->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+  </head>
+
+  <body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="fa fa-home"> CV and Samples </a>
+        <div role="search">
+	  <form id ="rtd-search-form" class="wy-form"
+		action="search.html" method="get">
+	    <input type="text" name="q" placeholder="Search docs" />
+	    <input type="hidden" name="check_keywords" value="yes" />
+	    <input type="hidden" name="area" value="default" />
+	  </form>
+	</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	
+          
+          
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="CV.html">CV in Russian</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CV.html#id2">Навыки и качества</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CV.html#id3">Места работы и обязанности</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CV.html#id4">Образование</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CV_en.html">CV in English</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CV_en.html#skills-and-attributes">Skills and Attributes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CV_en.html#previous-positions-and-tasks">Previous Positions and Tasks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CV_en.html#education">Education</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Encoding.html">Encoding Unicode: UTF-8 vs. UTF-16</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="Encoding.html#before-unicode">Before Unicode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Encoding.html#the-unicode-standard">The Unicode Standard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Encoding.html#utf-8-vs-utf-16-in-software-development">UTF-8 vs. UTF-16 in Software Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Encoding.html#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="winapi.html">Взаимодействие с функциями Windows API в PowerShell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="winapi.html#add-type">Использование командлета Add-Type</a></li>
+<li class="toctree-l2"><a class="reference internal" href="winapi.html#net">Извлечение приватных методов .NET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="winapi.html#id4">Рефлексия</a></li>
+<li class="toctree-l2"><a class="reference internal" href="winapi.html#id6">Выбор способа</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">How to Interact with Windows API Functions in PowerShell</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#add-type-cmdlet">Add-Type cmdlet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#extraction-of-private-net-methods">Extraction of private .NET methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reflection">Reflection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-to-choose">How to choose</a></li>
+</ul>
+</li>
+</ul>
+
+          
+        
+
+      </div>
+      &nbsp;
+    </nav>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      <nav class="wy-nav-top" id="barra-mobile" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="#">Porão do Juca</a>
+      </nav>
+
+      <div class="wy-nav-content">
+	<div class="fundo-claro">
+	</div>
+	<div class="fundo-escuro">
+	</div>
+
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+	    
+	    <!-- <ul class="wy-breadcrumbs"> -->
+	    <!--   <li><a href="#">Docs</a> &raquo;</li> -->
+
+	    <!--   <li>Features</li> -->
+	    <!--   <li class="wy-breadcrumbs-aside"> -->
+
+	    <!-- 	<a href="_sources/index.txt" rel="nofollow"> View page source</a> -->
+
+	    <!--   </li> -->
+	    <!-- </ul> -->
+	    <!-- <hr/> -->
+	  </div>
+
+          <div role="main" class="">
+
+	    <div id="content" class="hfeed entry-container hentry">
+  <div class="section" id="how-to-interact-with-windows-api-functions-in-powershell">
+<h1>How to Interact with Windows API Functions in PowerShell<a class="headerlink" href="#how-to-interact-with-windows-api-functions-in-powershell" title="Permalink to this headline">¶</a></h1>
+<p>Windows PowerShell is an object-oriented scripting environment. It is based on the platform of .NET Framework. PowerShell uses .NET classes with their properties and methods. This command shell is helpful for system maintenance tasks, setting up servers, software installation and automated network administration.</p>
+<p>But there are specific low-level tasks, which are beyond the standard functionality of Windows PowerShell. They refer to the functions of Windows API defined in the system dynamic-link libraries (DLLs). Although it is not possible to call WinAPI functions directly, there are three common ways to make their methods available in the current session of PowerShell:</p>
+<ol class="arabic simple">
+<li><p>Add-Type cmdlet</p></li>
+<li><p>Extraction of private .NET methods</p></li>
+<li><p>Reflection</p></li>
+</ol>
+<div class="section" id="add-type-cmdlet">
+<h2>Add-Type cmdlet<a class="headerlink" href="#add-type-cmdlet" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Add-Type</strong> cmdlet allows to compile the source code of the required Windows API function in C# and to apply a static .NET method in the current PowerShell session.</p>
+<p>Using the <strong>Add-Type</strong> cmdlet requires knowing the data types and parameters of the Windows API function. Such information can be obtained from Microsoft documentation. E.g., the <a class="reference external" href="https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-showwindowasync">ShowWindowAsync</a> function has the following syntax:</p>
+<div class="highlight-C++ notranslate"><div class="highlight"><pre><span></span><span class="n">BOOL</span> <span class="nf">ShowWindowAsync</span><span class="p">(</span>
+  <span class="n">HWND</span> <span class="n">hWnd</span><span class="p">,</span>
+  <span class="kt">int</span>  <span class="n">nCmdShow</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p>This function has BOOL return value and two parameters – a handle to  the window <strong>hWnd</strong> and an integer <strong>nCmdShow</strong>.</p>
+<p>In order to call a WinAPI function in PowerShell environment, a C# wrapper is needed. The website
+<a class="reference external" href="http://www.pinvoke.net/">pinvoke.net</a> provides C# signatures  for most existing WinAPI functions. The functions are listed there in alphabetical order and clustered by dynamic libraries. Full-text search is available. Copying ready made C# code is a faster and easier way to enable Windows API methods in PowerShell. Using the tested signatures from pinvoke.net reduces errors in source code.</p>
+<p>The <a class="reference external" href="http://www.pinvoke.net/default.aspx/user32/ShowWindowAsync.html">page</a> of the <strong>ShowWindowAsync</strong> function at pinvoke.net contains the following С# signature:</p>
+<div class="highlight-csharp notranslate"><div class="highlight"><pre><span></span><span class="na">[DllImport(&quot;user32.dll&quot;)]</span>
+<span class="k">static</span> <span class="k">extern</span> <span class="kt">bool</span> <span class="nf">ShowWindowAsync</span><span class="p">(</span><span class="n">IntPtr</span> <span class="n">hWnd</span><span class="p">,</span> <span class="kt">int</span> <span class="n">nCmdShow</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>In the example above, <strong>BOOL</strong> in C/C++ has been coverted into <strong>bool</strong> in .NET, the <strong>HWND</strong> handle – into <strong>IntPtr</strong>, and <strong>int</strong> has not been changed.</p>
+<p>Now declare a variable and set it according to the C# signature:</p>
+<div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="nv">$Signature</span> <span class="p">=</span> <span class="sh">@&quot;</span>
+<span class="sh">[DllImport(&quot;user32.dll&quot;)]</span>
+<span class="sh">public static extern bool ShowWindowAsync(IntPtr hWnd, int nCmdShow);</span>
+<span class="sh">&quot;@</span>
+</pre></div>
+</div>
+<p>The signature is saved in the <strong>$Signature</strong> variable and the <strong>public</strong> key-word is added to the signature code. That is required to make the new method available in the current PowerShell session.</p>
+<p>Then use the <strong>Add-Type</strong> cmdlet to add a new type and saved it in a variable. The cmdlet must get the variable with C# signature, the <strong>name</strong> and the <strong>namespace</strong> of the type as parameters.</p>
+<div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="nv">$ShowWindowAsync</span> <span class="p">=</span> <span class="nb">Add-Type</span> <span class="n">-MemberDefinition</span> <span class="nv">$Signature</span> <span class="n">-Name</span> <span class="s2">&quot;Win32ShowWindowAsync&quot;</span> <span class="n">-Namespace</span> <span class="n">Win32Functions</span> <span class="n">-PassThru</span>
+</pre></div>
+</div>
+<p>The Add-Type cmdlet does not create an object for the method by default. That can be fixed by adding <strong>PassThru</strong>. Then the class can be called in the current PowerShell session using the name and the namespace assigned to the type: ‘[Win32Functions.Win32ShowWindowAsync]’.</p>
+<p>Here is how to address the static method of a WinAPI function that is now available in the PowerShell session:</p>
+<div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="nv">$ShowWindowAsync</span><span class="p">::</span><span class="n">ShowWindowAsync</span><span class="p">((</span><span class="nb">Get-Process</span> <span class="n">-Id</span> <span class="nv">$pid</span><span class="p">).</span><span class="n">MainWindowHandle</span><span class="p">,</span> <span class="n">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Calling a static .NET method requires two colons between the variable name and the method. In the example above, the method of the <strong>ShowWindowAsync</strong> function is used to minimize the active window. The <strong>Get-Process</strong> cmdlet uses <strong>$pid</strong> variable to get the ID of the current PowerShell session process. Then the <strong>ShowWindowAsync</strong> method sets the main window handle to ‘2’ to minimize it.</p>
+<p>Similar source code can be used for adding a function to PowerShell. Save a relevant script in user profile to make the method available during the future sessions.</p>
+</div>
+<div class="section" id="extraction-of-private-net-methods">
+<h2>Extraction of private .NET methods<a class="headerlink" href="#extraction-of-private-net-methods" title="Permalink to this headline">¶</a></h2>
+<p>.NET uses Windows API functions. The framework calls them from the loaded dynamic libraries using private static methods with the <strong>DllImport</strong> attribute.</p>
+<p>Windows PowerShell allows to write a script or a function that will search for the required WinAPI method in the loaded DLLs. Here is an example of such <a class="reference external" href="https://devblogs.microsoft.com/scripting/use-powershell-to-interact-with-the-windows-api-part-2/">function</a>:</p>
+<div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="k">function</span> <span class="nb">Find-WinAPIFunction</span>
+<span class="p">{</span>
+     <span class="p">[</span><span class="k">CmdletBinding</span><span class="p">()]</span>
+     <span class="p">[</span><span class="n">OutputType</span><span class="p">(</span><span class="no">[System.Reflection.MethodInfo]</span><span class="p">)]</span>
+     <span class="k">Param</span>
+     <span class="p">(</span>
+         <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span> <span class="p">=</span> <span class="nv">$True</span><span class="p">,</span> <span class="k">Position</span> <span class="p">=</span> <span class="n">0</span><span class="p">)]</span>
+         <span class="p">[</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span>
+         <span class="no">[String]</span>
+         <span class="nv">$Module</span><span class="p">,</span>
+         <span class="p">[</span><span class="k">Parameter</span><span class="p">(</span><span class="k">Mandatory</span> <span class="p">=</span> <span class="nv">$True</span><span class="p">,</span> <span class="k">Position</span> <span class="p">=</span> <span class="n">1</span><span class="p">)]</span>
+         <span class="p">[</span><span class="n">ValidateNotNullOrEmpty</span><span class="p">()]</span>
+         <span class="no">[String]</span>
+         <span class="nv">$FunctionName</span>
+     <span class="p">)</span>
+     <span class="no">[System.AppDomain]</span><span class="p">::</span><span class="n">CurrentDomain</span><span class="p">.</span><span class="n">GetAssemblies</span><span class="p">()</span> <span class="p">|</span>
+        <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">GetTypes</span><span class="p">()</span> <span class="p">}</span> <span class="p">|</span>
+            <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$_</span><span class="p">.</span><span class="n">GetMethods</span><span class="p">(</span><span class="s1">&#39;NonPublic, Public, Static&#39;</span><span class="p">)</span> <span class="p">}</span> <span class="p">|</span>
+                <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$MethodInfo</span> <span class="p">=</span> <span class="nv">$_</span><span class="p">;</span> <span class="nv">$_</span><span class="p">.</span><span class="n">GetCustomAttributes</span><span class="p">(</span><span class="nv">$false</span><span class="p">)</span> <span class="p">}</span> <span class="p">|</span>
+                    <span class="nb">Where-Object</span> <span class="p">{</span>
+                        <span class="nv">$MethodInfo</span><span class="p">.</span><span class="n">Name</span><span class="p">.</span><span class="n">ToLower</span><span class="p">()</span> <span class="o">-eq</span> <span class="nv">$FunctionName</span><span class="p">.</span><span class="n">ToLower</span><span class="p">()</span> <span class="o">-and</span>
+                        <span class="nv">$_</span><span class="p">.</span><span class="n">Value</span> <span class="o">-eq</span> <span class="nv">$Module</span>
+                    <span class="p">}</span> <span class="p">|</span> <span class="k">ForEach</span><span class="n">-Object</span> <span class="p">{</span> <span class="nv">$MethodInfo</span> <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For example, this function can find the <strong>CopyFile</strong> method in <strong>kernel32.dll</strong> and determine its containers. Declare a variable <strong>$CopyFile</strong> and set it to the search results for ‘CopyFile’ in <strong>kernel32.dll</strong> from <strong>Find-WinAPIFunction</strong>:</p>
+<div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="nv">$CopyFile</span> <span class="p">=</span> <span class="nb">Find-WinAPIFunction</span> <span class="n">kernel32</span><span class="p">.</span><span class="n">dll</span> <span class="n">CopyFile</span>
+</pre></div>
+</div>
+<p>If there are multiple entries, the function will save a massive of results in the variable. To use the first result only:</p>
+<div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="nv">$CopyFile</span> <span class="p">=</span> <span class="nv">$CopyFile</span><span class="p">[</span><span class="n">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Then discover the containing module and type:</p>
+<div class="highlight-PowerShell notranslate"><div class="highlight"><pre><span></span><span class="nv">$CopyFile</span><span class="p">.</span><span class="n">Module</span><span class="p">.</span><span class="n">Name</span>
+<span class="nv">$CopyFile</span><span class="p">.</span><span class="n">DeclaringType</span><span class="p">.</span><span class="n">FullName</span>
+</pre></div>
+</div>
+<p>The PowerShell window will display the following:</p>
+<img alt="_images/1.png" src="_images/1.png" />
+<p>The <strong>CopyFile</strong> method is in the <strong>Microsoft.Win32.Win32Native</strong> type of the <strong>mscorlib.dll</strong> library. Now you can add a function that will call the method by extracting it from the containing dynamic library and type. An example of such function can be found <a class="reference external" href="https://gallery.technet.microsoft.com/scriptcenter/Copy-RawItem-Private-NET-78917643">here</a> .</p>
+</div>
+<div class="section" id="reflection">
+<h2>Reflection<a class="headerlink" href="#reflection" title="Permalink to this headline">¶</a></h2>
+<p>Reflection is another way of calling the methods of WinAPI functions in PowerShell environment. First, type introspection is performed, which is discovering methods and properties of a function. The most obvious way to do that in PowerShell is the <strong>Get-Member</strong> cmdlet. Then the collected data is used to generate code dynamically.</p>
+<p>In order to understand the process of reflection and dynamic code generation, one should think of the current system environment as a structure of nested containers. The highest level is <strong>AppDomain</strong> of the PowerShell session. It contains multiple assemblies. Assemblies contain modules, i.e. DLLs. Modules are containers for types. Finally, types contain members that are subject for reflection. Members include methods, properties, nested types, and events.</p>
+<p>The concept of generating code dynamically is to define all elements of the nested structure. First, a dynamic assembly is defined within the current <strong>AppDomain</strong>. Then a dynamic module, a dynamic type and a dynamic method must be defined progressively. The dynamic method is assigned <strong>Public</strong> and <strong>Static</strong> attributes, as well as a custom <strong>DllImport</strong> attribute. Finally, the CreateType method is applied to make the new dynamically defined method available for the current PowerShell session.</p>
+<p><a class="reference external" href="https://gallery.technet.microsoft.com/scriptcenter/Copy-RawItem-Reflection-38fae6d4">Here</a>  you can find an example of the function, that implements the abovementioned process.</p>
+</div>
+<div class="section" id="how-to-choose">
+<h2>How to choose<a class="headerlink" href="#how-to-choose" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>Add-Type</strong> cmdlet is the simplest and the least error prone way to make WinAPI functions available in PowerShell environment. This method is sufficient for accessing most functions of the system DLL’s.</p>
+<p>But using the <strong>Add-Type</strong> cmdlet requires writing temporary files to disk and calling csc.exe – the C# compiler. That may be undesirable when zero footprint is necessary. In such cases extraction of .NET methods is preferable.</p>
+<p>Finally, reflection may do the job if the required WinAPI function is not present in the loaded part of .NET framework or is contained in a DLL that is not accessible from the current Windows PowerShell session.</p>
+</div>
+</div>
+
+
+	    </div>
+            <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="winapi.html" class="btn btn-neutral" title="Взаимодействие с функциями Windows API в PowerShell"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Denis Mashutin.
+    </p>
+  </div>
+
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/jucacrispim/sphinx_pdj_theme">theme</a> provided by <a href="http://poraodojuca.net">Porão do Juca</a>.
+
+</footer>
+	</div>
+	</div>
+	  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js">
+
+    </script>
+    <script type="text/javascript" src="_static/underscore.js">
+
+    </script>
+    <script type="text/javascript" src="_static/doctools.js">
+
+    </script>
+    <script type="text/javascript" src="_static/language_data.js">
+
+    </script>
+
+  
+
+   <script type="text/javascript"
+           src="_static/js/theme.js"></script>
+
+   <script type="text/javascript"
+           src="_static/js/pdj.js"></script>
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+  </body>
+</html>
