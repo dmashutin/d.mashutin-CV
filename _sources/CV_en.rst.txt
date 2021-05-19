@@ -20,38 +20,41 @@ Skills and Attributes
 =====================
 * **Near native** English writing
 * Proficient with **Markdown** and **reStructuredText** markup languages, advanced user of **Sublime Text**, **Sphinx**, and **Git**
+* **Python** enthusiast
 * Advanced spoken and written Arabic
-* Error-free writing
 * Ability to quickly find information, acquire knowledge, master tools
 * Strong prioritization skills
-* Perfectionism
 * Time management skills
-* Leadership experience 
 
 Previous Positions and Tasks
 ============================
 
-* 03.2020 – till now – **Head of technical translation department** at STG Engineering, LLC
-	- interact with company departments, clarify tasks
+* 11/2020 – now – **Senior Technical Writer** @ Kaspersky
+	- write documentation for SDK, API, mobile products
 
-	- write and translate business letters
+	- develop and support custom documentation tools
 
-	- assign tasks to translators, quality control
+* 03/2020 – 11/2020 – **Head of technical translation department** @ STG Engineering, LLC
+	- interacted with company departments, clarify tasks
+
+	- wrote and translated business letters
+
+	- assigned tasks to translators, controlled quality
 	
-	- test candidates
+	- tested candidates
 
-* 06.2019 – 03.2020 – **Arabic translator** at STG Engineering, LLC
+* 06/2019 – 03/2020 – **Arabic translator** @ STG Engineering, LLC
 	-	maintained technical documentation, translated laws and standards for the foreign subsidiary
 	-	translated financial and accounting documents, invoices, reports
-* 04.2019 – 06.2019 – **Regional manager**, MPC KRZ, CJSC, Roofing materials sales department
+* 04/2019 – 06/2019 – **Regional manager** @ MPC KRZ, CJSC, Roofing materials sales department
 	-	monitored accounts receivable, participated in production planning
 	-	developed a step-by-step manual for the order management system of a major DIY retail chain
 * 2014 – 2018 – **Technical translator** of a team of military engineers in UAE
 	-	used Excel+VBA to develop an electronic system for processing spare parts orders, wrote user manuals for the system
 	-	interacted with government agencies, ordered spare parts, kept track of provided services, managed everyday issues
 * 2013 – 2014  – **Senior interpreter** of a team of military instructors in Kuwait
-* 2009 – 2013  – **Translator** at the Higher Military School (Algeria)
-* 2008 – 2009  – **Translator** at the Military Automotive Institute (Ryazan, Russia)
+* 2009 – 2013  – **Translator** @ the Higher Military School (Algeria)
+* 2008 – 2009  – **Translator** @ the Military Automotive Institute (Ryazan, Russia)
 
 Education
 =========

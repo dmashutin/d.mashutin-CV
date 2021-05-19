@@ -27,7 +27,7 @@
               href="genindex.html"/>
         <link rel="search" title="Search" href="search.html"/>
     <link rel="top" title="CV and Samples  documentation" href="index.html"/>
-        <link rel="prev" title="Взаимодействие с функциями Windows API в PowerShell" href="winapi.html"/>
+        <link rel="prev" title="Encoding Unicode: UTF-8 vs. UTF-16" href="Encoding.html"/>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta http-equiv="cache-control" content="public" />
@@ -60,13 +60,7 @@
           
           
               <ul>
-<li class="toctree-l1"><a class="reference internal" href="CV.html">CV in Russian</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="CV.html#id2">Навыки и качества</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CV.html#id3">Места работы и обязанности</a></li>
-<li class="toctree-l2"><a class="reference internal" href="CV.html#id4">Образование</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="CV_en.html">CV in English</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="CV_en.html">CV</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="CV_en.html#skills-and-attributes">Skills and Attributes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CV_en.html#previous-positions-and-tasks">Previous Positions and Tasks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="CV_en.html#education">Education</a></li>
@@ -79,13 +73,6 @@
 <li class="toctree-l2"><a class="reference internal" href="Encoding.html#the-unicode-standard">The Unicode Standard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Encoding.html#utf-8-vs-utf-16-in-software-development">UTF-8 vs. UTF-16 in Software Development</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Encoding.html#conclusion">Conclusion</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="winapi.html">Взаимодействие с функциями Windows API в PowerShell</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="winapi.html#add-type">Использование командлета Add-Type</a></li>
-<li class="toctree-l2"><a class="reference internal" href="winapi.html#net">Извлечение приватных методов .NET</a></li>
-<li class="toctree-l2"><a class="reference internal" href="winapi.html#id4">Рефлексия</a></li>
-<li class="toctree-l2"><a class="reference internal" href="winapi.html#id6">Выбор способа</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">How to Interact with Windows API Functions in PowerShell</a><ul>
@@ -139,11 +126,11 @@
 <h1>How to Interact with Windows API Functions in PowerShell<a class="headerlink" href="#how-to-interact-with-windows-api-functions-in-powershell" title="Permalink to this headline">¶</a></h1>
 <p>Windows PowerShell is an object-oriented scripting environment. It is based on the platform of .NET Framework. PowerShell uses .NET classes with their properties and methods. This command shell is helpful for system maintenance tasks, setting up servers, software installation and automated network administration.</p>
 <p>But there are specific low-level tasks, which are beyond the standard functionality of Windows PowerShell. They refer to the functions of Windows API defined in the system dynamic-link libraries (DLLs). Although it is not possible to call WinAPI functions directly, there are three common ways to make their methods available in the current session of PowerShell:</p>
-<ol class="arabic simple">
+<ul class="simple">
 <li><p>Add-Type cmdlet</p></li>
 <li><p>Extraction of private .NET methods</p></li>
 <li><p>Reflection</p></li>
-</ol>
+</ul>
 <div class="section" id="add-type-cmdlet">
 <h2>Add-Type cmdlet<a class="headerlink" href="#add-type-cmdlet" title="Permalink to this headline">¶</a></h2>
 <p>The <strong>Add-Type</strong> cmdlet allows to compile the source code of the required Windows API function in C# and to apply a static .NET method in the current PowerShell session.</p>
@@ -252,7 +239,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="winapi.html" class="btn btn-neutral" title="Взаимодействие с функциями Windows API в PowerShell"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="Encoding.html" class="btn btn-neutral" title="Encoding Unicode: UTF-8 vs. UTF-16"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

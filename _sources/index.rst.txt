@@ -5,7 +5,7 @@
 
 .. image:: _static/face.jpg
 	:align: left
-	:scale: 7%
+	:scale: 8%
 
 **************
 Denis Mashutin
@@ -15,23 +15,20 @@ Denis Mashutin
 
 **+7 910 615 25 75**
 
-CV's
-====
+**properevod@gmail.com**
 
 .. toctree::
    :maxdepth: 1
 
-   CV in Russian <CV>
-   CV in English <CV_en>
+   CV <CV_en>
 
-Samples of Articles
+Writing Samples
 ===================
 
 .. toctree::
    :maxdepth: 1
 
    Encoding
-   winapi
    winapi_en
    
 

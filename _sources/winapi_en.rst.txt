@@ -6,9 +6,9 @@ Windows PowerShell is an object-oriented scripting environment. It is based on t
 
 But there are specific low-level tasks, which are beyond the standard functionality of Windows PowerShell. They refer to the functions of Windows API defined in the system dynamic-link libraries (DLLs). Although it is not possible to call WinAPI functions directly, there are three common ways to make their methods available in the current session of PowerShell:
 
-1.	Add-Type cmdlet
-2.	Extraction of private .NET methods
-3.	Reflection
+-	Add-Type cmdlet
+-	Extraction of private .NET methods
+-	Reflection
 
 Add-Type cmdlet
 ===============
